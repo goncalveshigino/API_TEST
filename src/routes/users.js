@@ -5,14 +5,18 @@ const UsersController = require('../controllers/users.controller')
 
 //INDEX 
 router.get('/', UsersController.index.bind(UsersController));
+
 //SHOW
 router.get('/:id', UsersController.show.bind(UsersController));
-//STORE
+ 
+// STORE
 router.post('/', UsersController.store.bind(UsersController));
-//UPDATE
+
+// //UPDATE
 router.patch('/:id', UsersController.update.bind(UsersController));
-//REMOVE
-router.patch('/:id', UsersController.delete.bind(UsersController));
+ 
+// //REMOVE
+router.delete('/:id', UsersController.remove.bind(UsersController));
 
 
 module.exports = router;
