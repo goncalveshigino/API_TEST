@@ -1,9 +1,18 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const UsersController = require('../controllers/users.controller')
+
+//INDEX 
+router.get('/', UsersController.index.bind(UsersController));
+//SHOW
+router.get('/:id', UsersController.show.bind(UsersController));
+//STORE
+router.post('/', UsersController.store.bind(UsersController));
+//UPDATE
+router.patch('/:id', UsersController.update.bind(UsersController));
+//REMOVE
+router.patch('/:id', UsersController.delete.bind(UsersController));
+
 
 module.exports = router;
