@@ -29,6 +29,9 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'O Email deve ser informado',
         }
       },
+      isEmail: {
+        msg: "Não é um email válido"
+      }
       
     },
     password: {
@@ -42,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    underscored: true,
+    underscored: false,
     modelName: 'User',
   });
   return User;

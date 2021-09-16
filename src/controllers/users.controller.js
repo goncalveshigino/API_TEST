@@ -70,7 +70,6 @@ class UsersController {
 
    async store(req, res, next) {
 
-
         try {
 
             const entity = await User.create(req.body);
